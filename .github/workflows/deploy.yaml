@@ -7,7 +7,7 @@ on:
 
 jobs:
   dev:
-    runs-on: macos-latest-large
+    runs-on: macos-latest
     environment: 
       name: Dev
     steps:
