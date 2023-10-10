@@ -1,0 +1,25 @@
+name: f2
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dev:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Dev
+    steps:
+      - name: Print hello world to dev
+        run: echo "Hello, world!"
+      - name: sleep
+        run: sleep 60
+
+  staging:
+    runs-on: ubuntu-latest
+    needs: [dev]
+    environment: 
+      name: staging
+    steps:
+      - name: Print hello world to staging
+        run: echo "Hello, world from staging!"
